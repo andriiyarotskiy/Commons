@@ -1,14 +1,8 @@
-
 .message {
     display: flex;
     align-items: flex-end;
     justify-content: center;
     background: #15142a;
-}
-.message__ava-icon img {
-    display: block;
-    max-width: 50px;
-    border-radius: 50px;
 }
 
 .message__text {
@@ -51,23 +45,4 @@
     border-radius: 100%;
     transform: translate(0px, 3px);
 }
-.text span {
-    font-size: 20px;
-    color: #15142a;
-    font-weight: bold;
-}
 
-.text__item {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-top: 10px;
-}
-
-.time__item {
-    margin-left: auto;
-}
-.time__item span {
-    font-size: 15px;
-    opacity: 0.9;
-}
