@@ -19,6 +19,11 @@ function App() {
             </div>
         </div>
     );
+  return (
+    <div>
+      clear
+    </div>
+  );
 }
 
 export default App;
