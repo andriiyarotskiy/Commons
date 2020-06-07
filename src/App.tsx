@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import Todo from "./components/Todolist";
 
-function App() {
+const App = () => {
   return (
     <div>
-        dev
+        <Todo />
     </div>
   );
 }
