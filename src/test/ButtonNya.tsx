@@ -6,7 +6,7 @@ const ButtonNya: React.FC<ButtonNyaPropsType> = () => {
 
     return (
         <div>
-            <button onClick={() => {alert('yo')}}>btn</button>
+            <button>btn</button>
         </div>
     )
 }

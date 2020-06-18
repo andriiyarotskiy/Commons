@@ -3,8 +3,12 @@ import s from './test/InputNya.module.css'
 
 
 export type InputNyaPropsType =
-    DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
-    & { onEnter?: (title: string) => void, error?: string };
+    DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> &
+    {
+        onEnter?: (title: string) => void,
+        error?: string,
+        clearInputAfterPress: (title:string) => void
+    };
 // добавил title: string чтоб в функции onEnter отображалось value
 
 const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
@@ -16,16 +20,17 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
     }
 
     const handleKeyPress = (e: KeyboardEvent) => {
+        props.clearInputAfterPress('')
         if (e.key === 'Enter') { // Нажатие на Enter запускает функцию OnEnter
             onEnter && onEnter(title) // вызов функции onEnter из другой компоненты через пропс
             setTitle('')
         }
     }
 
-    const handleButtonClick = () => {
-        onEnter && onEnter(title)
-        setTitle('')
-    }
+    // const handleButtonClick = () => {
+    //     onEnter && onEnter(title)
+    //     setTitle('')
+    // }
 
 
     return (
@@ -41,10 +46,10 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
                     <span>{error}</span>
                 </div>
             </div>
-            <button
-                className={s.btn}
-                onClick={handleButtonClick}>BTN
-            </button>
+            {/*<button*/}
+            {/*    className={s.btn}*/}
+            {/*    onClick={handleButtonClick}>BTN*/}
+            {/*</button>*/}
         </>
 
     );

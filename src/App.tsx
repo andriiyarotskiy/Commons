@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import InputNya from "./InputNya";
+import ButtonNya from "./test/ButtonNya";
 
 
 function App() {
@@ -15,9 +16,18 @@ function App() {
         }
     }
 
+    function clearInputAfterPress(title: string) {
+        if (!title) {
+            setError('')
+        }
+    }
+
     return (
         <div>
-            <InputNya onEnter={onEnter} error={error}/>
+            <InputNya onEnter={onEnter}
+                      error={error}
+                      clearInputAfterPress={clearInputAfterPress}/>
+            <ButtonNya/>
         </div>
     );
 }
