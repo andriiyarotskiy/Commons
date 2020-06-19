@@ -21,7 +21,7 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
     }
 
     const handleKeyPress = (e: KeyboardEvent) => {
-        props.clearInputAfterPress('')
+        props.clearInputAfterPress('') // Вызoв хук из компоненты App чтоб очистить инпут после press
         if (e.key === 'Enter') { // Нажатие на Enter запускает функцию OnEnter
             onEnter && onEnter(title) // вызов функции onEnter из другой компоненты через пропс
             setTitle('')
