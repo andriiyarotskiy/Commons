@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import InputTask from "./components/InputTask/InputTask";
 import {v1} from "uuid";
+import InputNya from "./InputNya/InputNya";
 
 
 export type ArrType = {
@@ -9,7 +10,10 @@ export type ArrType = {
     id: string
 }
 
-const App = () => {
+function App() {
+
+    let [error, setError] = useState<string>('')
+
     const [arr, setArr] = useState<Array<ArrType>>([]) // хук для данных newObj
 
 
@@ -22,9 +26,24 @@ const App = () => {
         }
     }
 
+    const onEnter = (title: string) => {
+        if (title.trim() !== '') {
+            alert('Hello ' + title.trim())
+        } else {
+            setError('Please add text to the form')
+        }
+    }
+
+    const clearInputAfterPress = (title: string) => {
+        if (!title) setError('')
+    }
+
     return (
         <div>
             <InputTask arr={arr} addName={addName}/>
+            <InputNya onEnter={onEnter}
+                      error={error}
+                      clearInputAfterPress={clearInputAfterPress}/>
         </div>
     );
 }
