@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import InputNya from "./InputNya";
-import ButtonNya from "./test/ButtonNya";
+import InputNya from "./InputNya/InputNya";
 
 
 function App() {
@@ -12,14 +11,12 @@ function App() {
         if (title.trim() !== '') {
             alert('Hello ' + title.trim())
         } else {
-            setError('please add text to input')
+            setError('Please add text to the form')
         }
     }
 
-    function clearInputAfterPress(title: string) {
-        if (!title) {
-            setError('')
-        }
+    const clearInputAfterPress = (title: string) => {
+        if (!title) setError('')
     }
 
     return (
@@ -27,7 +24,6 @@ function App() {
             <InputNya onEnter={onEnter}
                       error={error}
                       clearInputAfterPress={clearInputAfterPress}/>
-            <ButtonNya/>
         </div>
     );
 }

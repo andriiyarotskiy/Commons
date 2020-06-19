@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, DetailedHTMLProps, InputHTMLAttributes, useState} from "react";
-import s from './test/InputNya.module.css'
+import s from './InputNya.module.css'
+import ButtonNya from "../ButtonNya/ButtonNya";
 
 
 export type InputNyaPropsType =
@@ -7,7 +8,7 @@ export type InputNyaPropsType =
     {
         onEnter?: (title: string) => void,
         error?: string,
-        clearInputAfterPress: (title:string) => void
+        clearInputAfterPress: (title: string) => void
     };
 // добавил title: string чтоб в функции onEnter отображалось value
 
@@ -27,10 +28,10 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
         }
     }
 
-    // const handleButtonClick = () => {
-    //     onEnter && onEnter(title)
-    //     setTitle('')
-    // }
+    const handleButtonClick = () => {
+        onEnter && onEnter(title)
+        setTitle('')
+    }
 
 
     return (
@@ -46,10 +47,9 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
                     <span>{error}</span>
                 </div>
             </div>
-            {/*<button*/}
-            {/*    className={s.btn}*/}
-            {/*    onClick={handleButtonClick}>BTN*/}
-            {/*</button>*/}
+            <ButtonNya nameBtn={'component button'}
+                       funcClick={handleButtonClick}
+            />
         </>
 
     );

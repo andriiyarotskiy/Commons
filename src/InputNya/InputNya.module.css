@@ -8,8 +8,6 @@ body {
 
 .wrapperInput {
     position: relative;
-    margin-top: 100px;
-    /*margin-left: 100px;*/
 }
 
 .wrapperInput .inputNya {
@@ -17,7 +15,9 @@ body {
     width: 300px;
     padding: 0 10px;
     line-height: 40px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
     background: none;
     border-width: 0;
     border-bottom: 2px solid #4a90e2;
@@ -26,31 +26,17 @@ body {
 
 .wrapperInput input:focus {
     outline: 0;
-    border-color: #F77A52;
+    /*border-color: #F77A52;*/
 }
 
 .wrapperInput .error {
     position: absolute;
-    transform: translateY(-60px);
-    margin-left: 75px;
+    transform: translateY(-30px);
+    left: 65px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
     outline: 0;
     border-color: #F77A52;
     color: red;
-}
-
-.btn {
-    display: block;
-    width: 300px;
-    margin-left: 100px;
-    margin-top: 30px;
-    padding: 15px 30px;
-    background: #4a90e2;
-    border-width: 0;
-    color: white;
-    font-size: 20px;
-    border-radius: 15px;
-    outline: none;
-    cursor: pointer;
+    opacity: .6;
 }
