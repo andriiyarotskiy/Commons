@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, KeyboardEvent, ChangeEvent} from "react";
 import {ArrType} from "../../App";
 
 
@@ -15,26 +15,33 @@ const InputTask = (props: InputTaskType) => {
         if (name) alert("Hello " + name)
     }
 
+    const handleKeyPress = (e: KeyboardEvent) => {
+        if (e.charCode === 13) {
+            props.addName(name)
+            sayHello(name)
+            setName('') // Очищаю инпут после ввода
+        }
+    }
+
+    const handleClickPress = () => {
+        props.addName(name)
+        sayHello(name)
+        setName('') // Очищаю инпут после ввода
+    }
+
+    const changeInputValue = (e: ChangeEvent<HTMLInputElement>) => {
+        setName(e.currentTarget.value)
+    }
+
     return (
         <div>
             <input
                 value={name}
-                onChange={(e) => {
-                    setName(e.currentTarget.value)
-                }}
-                onKeyPress={(e) => {
-                    if (e.charCode === 13) {
-                        props.addName(name)
-                        sayHello(name)
-                        setName('') // Очищаю инпут после ввода
-                    }
-                }}
+                onChange={changeInputValue}
+                onKeyPress={handleKeyPress}
             />
-            <button onClick={(e) => {
-                props.addName(name)
-                sayHello(name)
-                setName('') // Очищаю инпут после ввода
-            }}>+
+            <button onClick={handleClickPress}>
+                +
             </button>
             <span>{props.arr.length}</span>
         </div>

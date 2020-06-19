@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './App.css';
-import Todo from "./components/Todolist";
 import InputTask from "./components/InputTask/InputTask";
 import {v1} from "uuid";
 
@@ -25,7 +24,6 @@ const App = () => {
 
     return (
         <div>
-            {/*<Todo />*/}
             <InputTask arr={arr} addName={addName}/>
         </div>
     );
