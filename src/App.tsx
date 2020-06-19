@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
+import {v1} from "uuid";
 import './App.css';
 import InputTask from "./components/InputTask/InputTask";
-import {v1} from "uuid";
-import InputNya from "./InputNya/InputNya";
 
 
 export type ArrType = {
@@ -41,9 +40,9 @@ function App() {
     return (
         <div>
             <InputTask arr={arr} addName={addName}/>
-            <InputNya onEnter={onEnter}
-                      error={error}
-                      clearInputAfterPress={clearInputAfterPress}/>
+            {/*<InputNya onEnter={onEnter}*/}
+            {/*          error={error}*/}
+            {/*          clearInputAfterPress={clearInputAfterPress}/>*/}
         </div>
     );
 }

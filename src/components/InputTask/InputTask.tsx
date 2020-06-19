@@ -1,5 +1,6 @@
 import React, {useState, KeyboardEvent, ChangeEvent} from "react";
 import {ArrType} from "../../App";
+import ButtonNya from "../../ButtonNya/ButtonNya";
 
 
 type InputTaskType = {
@@ -40,9 +41,7 @@ const InputTask = (props: InputTaskType) => {
                 onChange={changeInputValue}
                 onKeyPress={handleKeyPress}
             />
-            <button onClick={handleClickPress}>
-                +
-            </button>
+            <ButtonNya funcClick={handleClickPress} nameBtn={'+'}/>
             <span>{props.arr.length}</span>
         </div>
     )

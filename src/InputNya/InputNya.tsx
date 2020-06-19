@@ -47,9 +47,9 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
                     <span>{error}</span>
                 </div>
             </div>
-            <ButtonNya nameBtn={'component button'}
-                       funcClick={handleButtonClick}
-            />
+            {/*<ButtonNya nameBtn={'component button'}*/}
+            {/*           funcClick={handleButtonClick}*/}
+            {/*/>*/}
         </>
 
     );
