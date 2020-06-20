@@ -34,17 +34,13 @@ const InputTask = (props: InputTaskType) => {
 
     return (
         <div>
-
             <InputNya value={name}
                       onChange={changeInputValue}
                       onEnter={handleKeyPress}
                       error={props.error}
                       clearInputAfterPress={() => props.clearInputAfterPress(name)}>
             </InputNya>
-            <ButtonNya onClick={handleClickPress}
-                       nameBtn={'Button'}
-            >
-            </ButtonNya>
+            <ButtonNya onClick={handleClickPress}>BTN</ButtonNya>
             <span>{props.arr.length}</span>
         </div>
     )
