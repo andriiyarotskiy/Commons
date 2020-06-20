@@ -28,7 +28,7 @@ function App() {
     return (
         <div>
             <InputNya onEnter={onEnterTest} error={error}/>
-            <ButtonNya nameBtn={"+"}/>
+            <ButtonNya>BTN</ButtonNya>
         </div>
     );
 }

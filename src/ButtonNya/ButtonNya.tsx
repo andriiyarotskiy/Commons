@@ -3,14 +3,12 @@ import s from './ButtonNya.module.css'
 
 export type ButtonNyaPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement> & {
-    nameBtn?: string // Типизация имени кнопки
 }
 
-const ButtonNya: React.FC<ButtonNyaPropsType> = ({ ...props}) => {
+const ButtonNya: React.FC<ButtonNyaPropsType> = ({...props}) => {
     return (
         <div>
-            <button className={s.btn}{...props}
-            >{props.nameBtn}</button>
+            <button className={s.btn}{...props}/>
         </div>
     )
 }
