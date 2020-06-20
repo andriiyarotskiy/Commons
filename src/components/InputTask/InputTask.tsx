@@ -1,32 +1,30 @@
 import React, {useState, KeyboardEvent, ChangeEvent} from "react";
 import {ArrType} from "../../App";
 import ButtonNya from "../../ButtonNya/ButtonNya";
+import InputNya from "../../InputNya/InputNya";
 
 
 type InputTaskType = {
     arr: Array<ArrType>
     addName: (name: string) => void
+    onEnter: (name: string) => void
+    error: string
+    clearInputAfterPress: (name: string) => void
 }
 
 const InputTask = (props: InputTaskType) => {
 
     const [name, setName] = useState('') // Хук для инпута
 
-    function sayHello(name: string) {
-        if (name) alert("Hello " + name)
-    }
-
-    const handleKeyPress = (e: KeyboardEvent) => {
-        if (e.charCode === 13) {
-            props.addName(name)
-            sayHello(name)
-            setName('') // Очищаю инпут после ввода
-        }
+    const handleKeyPress = () => {
+        props.onEnter(name)
+        props.addName(name) // функция для добавления имени и отображения в спане к-ства обьектов
+        setName('') // Очищаю инпут после ввода
     }
 
     const handleClickPress = () => {
-        props.addName(name)
-        sayHello(name)
+        props.onEnter(name)
+        props.addName(name) //функция для добавления имени и отображения в спане к-ства обьектов
         setName('') // Очищаю инпут после ввода
     }
 
@@ -36,12 +34,17 @@ const InputTask = (props: InputTaskType) => {
 
     return (
         <div>
-            <input
-                value={name}
-                onChange={changeInputValue}
-                onKeyPress={handleKeyPress}
-            />
-            <ButtonNya funcClick={handleClickPress} nameBtn={'+'}/>
+
+            <InputNya value={name}
+                      onChange={changeInputValue}
+                      onEnter={handleKeyPress}
+                      error={props.error}
+                      clearInputAfterPress={() => props.clearInputAfterPress(name)}>
+            </InputNya>
+            <ButtonNya onClick={handleClickPress}
+                       nameBtn={'Button'}
+            >
+            </ButtonNya>
             <span>{props.arr.length}</span>
         </div>
     )

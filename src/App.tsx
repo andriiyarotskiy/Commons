@@ -12,8 +12,7 @@ export type ArrType = {
 function App() {
 
     let [error, setError] = useState<string>('')
-
-    const [arr, setArr] = useState<Array<ArrType>>([]) // хук для данных newObj
+    let [arr, setArr] = useState<Array<ArrType>>([]) // хук для данных newObj
 
 
     let addName = (name: string) => {
@@ -21,7 +20,6 @@ function App() {
             let newObj = {name: name, id: v1()}
             let newArr = [...arr, newObj]
             setArr(newArr)
-            console.log(newArr)
         }
     }
 
@@ -39,10 +37,13 @@ function App() {
 
     return (
         <div>
-            <InputTask arr={arr} addName={addName}/>
-            {/*<InputNya onEnter={onEnter}*/}
-            {/*          error={error}*/}
-            {/*          clearInputAfterPress={clearInputAfterPress}/>*/}
+            <InputTask
+                arr={arr}
+                addName={addName}
+                onEnter={onEnter}
+                error={error}
+                clearInputAfterPress={clearInputAfterPress}
+            />
         </div>
     );
 }
