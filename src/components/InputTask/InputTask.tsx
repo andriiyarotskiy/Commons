@@ -1,4 +1,4 @@
-import React, {useState, KeyboardEvent, ChangeEvent} from "react";
+import React, {useState, ChangeEvent} from "react";
 import {ArrType} from "../../App";
 import ButtonNya from "../../ButtonNya/ButtonNya";
 import InputNya from "../../InputNya/InputNya";
@@ -38,8 +38,8 @@ const InputTask = (props: InputTaskType) => {
                       onChange={changeInputValue}
                       onEnter={handleKeyPress}
                       error={props.error}
-                      clearInputAfterPress={() => props.clearInputAfterPress(name)}>
-            </InputNya>
+                      clearInputAfterPress={() => props.clearInputAfterPress(name)}
+            />
             <ButtonNya onClick={handleClickPress}>BTN</ButtonNya>
             <span>{props.arr.length}</span>
         </div>
