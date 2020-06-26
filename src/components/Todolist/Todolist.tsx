@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 // import style from './Todolist.module.css'
-import Todoapp from "./Todoapp/Todoapp";
+import Todoapp from "./Todoapp";
 
 
 export type TaskType = {

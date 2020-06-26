@@ -1,5 +1,5 @@
 import React from 'react';
-import {FilterValuesType, TaskType} from "../Todolist";
+import {FilterValuesType, TaskType} from "./Todolist";
 import style from './Todoapp.module.css'
 
 
