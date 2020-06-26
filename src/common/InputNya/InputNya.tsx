@@ -21,17 +21,18 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
     }
 
     return (
-        <>
-            <div className={s.wrapperInput}>
+        <div className={s.wrapper}>
+            <div className={s.container}>
                 <input className={s.inputNya} {...props}
                        type="text"
                        onKeyPress={handleKeyPress}
+                       placeholder={error}
                 />
                 <div className={s.error}>
-                    <span>{error}</span>
+                    {error}
                 </div>
             </div>
-        </>
+        </div>
 
     );
 };
