@@ -5,7 +5,7 @@ import s from './InputNya.module.css'
 export type InputNyaPropsType =
     DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> &
     {
-        onEnter: () => void,
+        onEnter?: () => void,
         error?: string,
         clearInputAfterPress?: () => void
     };
@@ -21,17 +21,16 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
     }
 
     return (
-        <>
-            <div className={s.wrapperInput}>
+        <div className={s.wrapper}>
+            <div className={s.container}>
                 <input className={s.inputNya} {...props}
                        type="text"
                        onKeyPress={handleKeyPress}
+                       placeholder={error}
                 />
-                <div className={s.error}>
-                    <span>{error}</span>
-                </div>
             </div>
-        </>
+            <div className={s.error}>{error}</div>
+        </div>
 
     );
 };
