@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import InputNya from "./InputNya/InputNya";
-import ButtonNya from "./ButtonNya/ButtonNya";
+import InputNya from "./common/InputNya/InputNya";
+import ButtonNya from "./common/ButtonNya/ButtonNya";
 
 
 function App() {
