@@ -1,0 +1,11 @@
+.message__avaIcon img {
+    display: block;
+    max-width: 50px;
+    border-radius: 50px;
+}
+
+.text span {
+    font-size: 20px;
+    color: #15142a;
+    font-weight: bold;
+}
