@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Message from "./components/Message";
-import User from "./components/User";
+import Message from "./components/Message/Message";
+import User from "./components/Message/User";
 
 
 function App() {
