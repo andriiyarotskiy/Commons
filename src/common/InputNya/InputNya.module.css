@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.wrapperInput {
+    position: relative;
+}
+
+.wrapperInput .inputNya {
+    display: block;
+    width: 300px;
+    padding: 0 10px;
+    line-height: 40px;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    background: none;
+    border-width: 0;
+    border-bottom: 2px solid #4a90e2;
+    transition: all 0.2s ease;
+}
+
+.wrapperInput input:focus {
+    outline: 0;
+    /*border-color: #F77A52;*/
+}
+
+.wrapperInput .error {
+    position: absolute;
+    transform: translateY(-30px);
+    left: 65px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: 0;
+    border-color: #F77A52;
+    color: red;
+    opacity: .6;
+}
