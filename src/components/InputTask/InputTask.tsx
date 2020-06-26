@@ -1,7 +1,7 @@
 import React, {useState, ChangeEvent} from "react";
 import {ArrType} from "../../App";
-import ButtonNya from "../../ButtonNya/ButtonNya";
-import InputNya from "../../InputNya/InputNya";
+import ButtonNya from "../../common/ButtonNya/ButtonNya";
+import InputNya from "../../common/InputNya/InputNya";
 
 
 type InputTaskType = {
