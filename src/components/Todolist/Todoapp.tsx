@@ -1,6 +1,7 @@
 import React from 'react';
 import {FilterValuesType, TaskType} from "./Todolist";
 import style from './Todoapp.module.css'
+import ButtonNya from "../../common/ButtonNya/ButtonNya";
 
 
 type PropsType = {
@@ -12,7 +13,6 @@ type PropsType = {
 
 
 const Todoapp = (props: PropsType) => {
-    const styleForBtn = `${style.button} ${style.button2}`
 
     return (
         <div>
@@ -20,34 +20,35 @@ const Todoapp = (props: PropsType) => {
             <div className={style.wrapper}>
                 {
                     props.task.map(t => {
-                            return <div className={style.container} key={t.id}>{t.title}
-                                <button className={styleForBtn} onClick={() => props.removeTask(t.id)}>remove</button>
+                            return <div className={style.container} key={t.id}>
+                                <p>{t.title}</p>
+                                <ButtonNya onClick={() => props.removeTask(t.id)}>remove</ButtonNya>
                             </div>
                         }
                     )
                 }
             </div>
-            <div  className={style.wrapperBtn}>
-                <button className={styleForBtn}
-                        onClick={() => props.changeFilter('very bad')}>
-                    very bad
-                </button>
-                <button className={styleForBtn}
-                        onClick={() => props.changeFilter('low')}>
-                    low
-                </button>
-                <button className={styleForBtn}
-                        onClick={() => props.changeFilter('medium')}>
-                    medium
-                </button>
-                <button className={styleForBtn}
-                        onClick={() => props.changeFilter('high')}>
-                    high
-                </button>
-                <button className={styleForBtn}
-                        onClick={() => props.changeFilter('all')}>
-                    ALL
-                </button>
+            <div className={style.wrapperBtn}>
+                <ButtonNya
+                    onClick={() => props.changeFilter('very bad')}>
+                    <p>very bad</p>
+                </ButtonNya>
+                <ButtonNya
+                    onClick={() => props.changeFilter('low')}>
+                    <p>low</p>
+                </ButtonNya>
+                <ButtonNya
+                    onClick={() => props.changeFilter('medium')}>
+                    <p>medium</p>
+                </ButtonNya>
+                <ButtonNya
+                    onClick={() => props.changeFilter('high')}>
+                    <p>high</p>
+                </ButtonNya>
+                <ButtonNya
+                    onClick={() => props.changeFilter('all')}>
+                    <p>ALL</p>
+                </ButtonNya>
             </div>
         </div>
     );
@@ -56,4 +57,3 @@ const Todoapp = (props: PropsType) => {
 export default Todoapp;
 
 
-// <button>X</button>
