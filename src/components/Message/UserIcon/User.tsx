@@ -30,5 +30,3 @@ const User = (props: UserNameType) => {
 }
 
 export default User
-
-// https://img.pngio.com/person-icon-png-download-10241024-free-transparent-avatar-png-png-avatar-900_900.jpg
