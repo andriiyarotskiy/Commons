@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 import InputTask from "./components/InputTask/InputTask";
 import {v1} from "uuid";
+import Mymessage from "./components/Message/Mymessage";
+import Todolist from "./components/Todolist/Todolist";
 
 
 export type ArrType = {
@@ -36,7 +38,9 @@ function App() {
     }
 
     return (
-        <div>
+        <div className={'app-wrapper'}>
+            <Mymessage/>
+            <Todolist/>
             <InputTask
                 arr={arr}
                 addName={addName}
