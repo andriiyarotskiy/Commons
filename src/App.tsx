@@ -12,8 +12,6 @@ function App() {
         <HashRouter>
             <div className={'app-wrapper'}>
                 <Navbar/>
-                {/*<Route path="/message" component={Mymessage}/>*/}
-                {/*<Route path="/todolist" component={Todolist}/>*/}
                 <Route path="/prejunior" component={PreJunior} />
                 <Route path="/junior" component={Junior} />
                 <Route path="/juniorplus" component={JuniorPlus} />
