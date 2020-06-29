@@ -1,54 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import InputTask from "./components/InputTask/InputTask";
-import {v1} from "uuid";
-import Mymessage from "./components/Message/Mymessage";
-import Todolist from "./components/Todolist/Todolist";
-
-
-export type ArrType = {
-    name: string
-    id: string
-}
+import Navbar from "./components/Navbar/Navbar";
+import {HashRouter, Route} from "react-router-dom";
+import PreJunior from "./components/pages/PreJunior";
+import Junior from "./components/pages/Junior";
+import JuniorPlus from "./components/pages/JuniorPlus";
 
 function App() {
 
-    let [error, setError] = useState<string>('')
-    let [arr, setArr] = useState<Array<ArrType>>([]) // хук для данных newObj
-
-
-    let addName = (name: string) => {
-        if (name) {
-            let newObj = {name: name, id: v1()}
-            let newArr = [...arr, newObj]
-            setArr(newArr)
-        }
-    }
-
-    const onEnter = (title: string) => {
-        if (title.trim() !== '') {
-            alert('Hello ' + title.trim())
-        } else {
-            setError('Please add text to the form')
-        }
-    }
-
-    const clearInputAfterPress = (title: string) => {
-        if (!title) setError('')
-    }
-
     return (
-        <div className={'app-wrapper'}>
-            <Mymessage/>
-            <Todolist/>
-            <InputTask
-                arr={arr}
-                addName={addName}
-                onEnter={onEnter}
-                error={error}
-                clearInputAfterPress={clearInputAfterPress}
-            />
-        </div>
+        <HashRouter>
+            <div className={'app-wrapper'}>
+                <Navbar/>
+                {/*<Route path="/message" component={Mymessage}/>*/}
+                {/*<Route path="/todolist" component={Todolist}/>*/}
+                <Route path="/prejunior" component={PreJunior} />
+                <Route path="/junior" component={Junior} />
+                <Route path="/juniorplus" component={JuniorPlus} />
+            </div>
+        </HashRouter>
     );
 }
 

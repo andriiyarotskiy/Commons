@@ -1,7 +1,8 @@
 import React, {useState, ChangeEvent} from "react";
-import {ArrType} from "../../App";
 import ButtonNya from "../../common/ButtonNya/ButtonNya";
 import InputNya from "../../common/InputNya/InputNya";
+import s from "./InputTask.module.css"
+import {ArrType} from "../pages/PreJunior";
 
 
 type InputTaskType = {
@@ -33,7 +34,7 @@ const InputTask = (props: InputTaskType) => {
     }
 
     return (
-        <div>
+        <div className={s.wrapperInputtask}>
             <InputNya value={name}
                       onChange={changeInputValue}
                       onEnter={handleKeyPress}
