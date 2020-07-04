@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+.middleEditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.middleEditable input {
+    margin: 0 auto;
+}
