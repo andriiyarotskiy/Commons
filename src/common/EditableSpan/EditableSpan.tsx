@@ -21,10 +21,12 @@ const EditableSpan = (props: EditableSpanType) => {
     return (
         editMode
             ? <InputNya value={props.value}
+                        autoFocus={true}
                         onBlur={offEditMode}
                         onChange={props.changeValueInput}
             />
-            : <span onClick={onEditMode}>Click on span</span>
+            : <span onClick={onEditMode}
+            >{props.value}</span>
     )
 }
 export default EditableSpan
