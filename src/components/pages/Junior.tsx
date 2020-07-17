@@ -10,7 +10,7 @@ type StateType = {
 
 function Junior() {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('Enter value for save')
 
     function changeValueInput(e: ChangeEvent<HTMLInputElement>) {
         setValue(e.currentTarget.value)
@@ -29,11 +29,11 @@ function Junior() {
         <>
             <h1>Junior</h1>
             <div className={s.middleEditable}>
-                <ButtonNya onClick={setStateCallBack}>SAVE</ButtonNya>
-                <ButtonNya onClick={getStateCallBack}>RESTORE</ButtonNya>
+                <EditableSpan value={value} changeValueInput={changeValueInput}/>
             </div>
             <div className={s.middleEditable}>
-                <EditableSpan value={value} changeValueInput={changeValueInput}/>
+                <ButtonNya onClick={setStateCallBack}>SAVE</ButtonNya>
+                <ButtonNya onClick={getStateCallBack}>RESTORE</ButtonNya>
             </div>
         </>
     );
