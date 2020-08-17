@@ -7,6 +7,7 @@ import Select from "../../common/Select/Select";
 import {v1} from "uuid";
 import Radio from "../../common/Radio/Radio";
 import {filteredAgeAC, hwReducer, sortDownAC, sortUpAndDownAC} from "../../homeWorkReducer";
+import moment from "moment";
 
 type StateType = {
     x: string
@@ -43,6 +44,7 @@ function Junior() {
         fontWeight: "bold",
         padding: "30px"
     }
+
     // === 6 Task hook ===
     const [value, setValue] = useState('Enter value for save')
     // === 7 Task hook===
@@ -94,6 +96,28 @@ function Junior() {
         setPeople(hwReducer(people, filteredAgeAC(18)))
     }
     // === 8 Task ===
+
+    // === 9 Task ===
+
+    const [timerId, setTimerId] = useState(0);
+
+    const [date, setDate] = useState(moment().format('HH:mm:ss'));
+
+    const startDateOnClick = () => {
+        let idInterval: any = setInterval(() => { // ANY   ?????????????
+            let newDateADD = moment().format('HH:mm:ss')
+            setDate(newDateADD)
+        }, 1000)
+        setTimerId(idInterval)
+    }
+    const stopPrevTime = () => {
+        clearInterval(timerId); // останавливает предыдущий таймер
+        const timer_id: any = setInterval(() => setDate(moment().format('HH:mm:ss')), 1000);
+        setTimerId(timer_id);
+    }
+
+    const FullDate = moment().format('LLLL')
+    // === 9 Task ===
     return (
         <>
             <p style={styleJunior}>Junior</p>
@@ -131,6 +155,19 @@ function Junior() {
                 <ButtonNya onClick={onClickSortUp}>Sort Up</ButtonNya>
                 <ButtonNya onClick={onClickSortDown}>Sort Down</ButtonNya>
                 <ButtonNya onClick={onClickSortByAge}>Sort Age</ButtonNya>
+            </div>
+
+            <div style={styleTitleTasks}>Home work №9</div>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
+                <div className={s.block}>
+                    <div className={s.blockHidden}>{FullDate}</div>
+                    <div className={s.blockVisible}>{date}</div>
+                </div>
+                <div>ID интервала : {timerId}</div>
+                <ButtonNya onClick={startDateOnClick}>Start Timer</ButtonNya>
+                <ButtonNya onClick={stopPrevTime}>Stop Prev Timer</ButtonNya>
+                <ButtonNya onClick={() => clearInterval(timerId)}>Stopping time update</ButtonNya>
+
             </div>
         </>
     );
