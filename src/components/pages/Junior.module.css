@@ -1,7 +1,28 @@
 * {
     box-sizing: border-box;
 }
-
+.juniorPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+.styleTitleTasks {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+}
+.homeWorkNine__wrapper {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+}
+.homeWorkNine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .middleEditable {
     display: flex;
     justify-content: center;
