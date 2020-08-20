@@ -9,12 +9,13 @@ import Radio from "../../common/Radio/Radio";
 import {filteredAgeAC, hwReducer, sortDownAC, sortUpAndDownAC} from "../../state/homeWorkReducer";
 import moment from "moment";
 import PreLoader from "../../common/PreLoader/PreLoader";
-import {juniorPageLoadingReducer, setLoadingAC} from '../../state/juniorPageLoadingReducer';
+import {useDispatch, useSelector} from 'react-redux';
+import {RootStateType} from '../../state/store';
+import {setLoadingAC, StateType} from "../../state/juniorPageLoadingReducer";
 
-type StateType = {
+type StateLocalStorageType = {
     x: string
 }
-
 export type OptionValueType = {
     id: string,
     title: string
@@ -61,10 +62,10 @@ function Junior() {
         setValue(e.currentTarget.value)
     }
     const setStateCallBack = () => {
-        saveState<StateType>("inputValue", {x: value}); // сохранение обьекта
+        saveState<StateLocalStorageType>("inputValue", {x: value}); // сохранение обьекта
     }
     const getStateCallBack = () => {
-        const state: StateType = restoreState<StateType>("inputValue", {x: ''});
+        const state: StateLocalStorageType = restoreState<StateLocalStorageType>("inputValue", {x: ''});
         setValue(state.x)
     }
     const changeStatus = (id: string) => {
@@ -118,11 +119,13 @@ function Junior() {
     const FullDate = moment().format('LLLL')
     // === 9 Task ===
     // === 10 Task ===
-    const [load, setLoad] = useState({loading: false})
+    const load = useSelector<RootStateType, StateType>(state => state.juniorPage)
+    const dispatch = useDispatch()
     const startLoadingClickHandler = () => {
-        setLoad(juniorPageLoadingReducer(load, setLoadingAC(true)))
-        setTimeout(setLoad, 3000, juniorPageLoadingReducer(load, setLoadingAC(false)))
+        dispatch(setLoadingAC(true)) // dispatch action
+        setTimeout(dispatch, 3000, setLoadingAC(false))
     }
+    console.log(load)
     // === 10 Task ===
     return (
         <div className={s.juniorPage}>
