@@ -10,7 +10,7 @@ export type InputNyaPropsType =
         clearInputAfterPress?: () => void
     };
 
-const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
+const InputNya: React.FC<InputNyaPropsType> = React.memo(({onEnter, error, ...props}) => {
 
 
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -33,6 +33,6 @@ const InputNya: React.FC<InputNyaPropsType> = ({onEnter, error, ...props}) => {
         </div>
 
     );
-};
+});
 
 export default InputNya;

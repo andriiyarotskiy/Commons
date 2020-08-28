@@ -1,6 +1,5 @@
-import React, {ChangeEvent, DetailedHTMLProps, SelectHTMLAttributes} from 'react'
+import React, {ChangeEvent, DetailedHTMLProps, SelectHTMLAttributes, useCallback} from 'react'
 import {OptionValueType} from "../../components/pages/Junior";
-
 
 
 type SelectType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> &
@@ -10,10 +9,9 @@ type SelectType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTM
         title: string
     }
 
-const Select = (props: SelectType) => {
+const Select = React.memo((props: SelectType) => {
 
     let optionElement = props.optionValue.map(el => {
-
         return (
             <option key={el.id}>
                 {el.title}
@@ -21,9 +19,9 @@ const Select = (props: SelectType) => {
         )
     })
 
-    const changeSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-       props.setSelected(e.currentTarget.value)
-    }
+    const changeSelect = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
+        props.setSelected(e.currentTarget.value)
+    }, [props.setSelected])
 
     return (
         <>
@@ -32,6 +30,6 @@ const Select = (props: SelectType) => {
             </select>
         </>
     )
-}
+})
 
 export default Select

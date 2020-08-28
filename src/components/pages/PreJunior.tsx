@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 // import InputTask from "./components/InputTask/InputTask";
 import {v1} from "uuid";
 import Mymessage from '../Message/Mymessage';
@@ -24,17 +24,17 @@ function PreJunior() {
         }
     }
 
-    const onEnter = (title: string) => {
+    const onEnter = useCallback((title: string) => {
         if (title.trim() !== '') {
             alert('Hello ' + title.trim())
         } else {
             setError('Please add text to the form')
         }
-    }
+    }, [])
 
-    const clearInputAfterPress = (title: string) => {
+    const clearInputAfterPress = useCallback((title: string) => {
         if (!title) setError('')
-    }
+    }, [])
 
     return (
         <div>

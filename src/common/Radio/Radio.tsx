@@ -6,7 +6,7 @@ type RadioTypeProps = {
     changeStatus: (id: string) => void
 }
 
-const Radio = (props: RadioTypeProps) => {
+const Radio = React.memo((props: RadioTypeProps) => {
 
     let radioJsxElement = props.radioArr.map(c => {
         const onChangeHandler = () => {
@@ -30,6 +30,6 @@ const Radio = (props: RadioTypeProps) => {
             {radioJsxElement}
         </>
     )
-}
+})
 
 export default Radio;

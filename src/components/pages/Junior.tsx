@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useCallback, useState} from 'react';
 import EditableSpan from "../../common/EditableSpan/EditableSpan";
 import s from "./Junior.module.css"
 import ButtonNya from "../../common/ButtonNya/ButtonNya";
@@ -12,6 +12,8 @@ import PreLoader from "../../common/PreLoader/PreLoader";
 import {useDispatch, useSelector} from 'react-redux';
 import {RootStateType} from '../../state/store';
 import {setLoadingAC, StateType} from "../../state/juniorPageLoadingReducer";
+import Range from "../../common/Range/Range";
+import DoubleSlider from "../../common/Range/DoubleSlider/DoubleSlider";
 
 type StateLocalStorageType = {
     x: string
@@ -58,9 +60,9 @@ function Junior() {
         {id: v1(), name: 'radio', value: 'three', status: false},
     ])
 
-    const changeValueInput = (e: ChangeEvent<HTMLInputElement>) => {
+    const changeValueInput = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
-    }
+    }, [])
     const setStateCallBack = () => {
         saveState<StateLocalStorageType>("inputValue", {x: value}); // сохранение обьекта
     }
@@ -68,7 +70,7 @@ function Junior() {
         const state: StateLocalStorageType = restoreState<StateLocalStorageType>("inputValue", {x: ''});
         setValue(state.x)
     }
-    const changeStatus = (id: string) => {
+    const changeStatus = useCallback((id: string) => {
         const newRadioArray = radio.map((r) => {
             if (r.id === id) {
                 return {...r, status: true}
@@ -77,7 +79,7 @@ function Junior() {
             }
         })
         setRadio(newRadioArray)
-    }
+    }, [])
 
 
     // === 8 Task ===
@@ -125,8 +127,20 @@ function Junior() {
         dispatch(setLoadingAC(true)) // dispatch action
         setTimeout(dispatch, 3000, setLoadingAC(false))
     }
-    console.log(load)
     // === 10 Task ===
+    // === 11 Task ===
+    const [rangeValue, setRangeValue] = useState('90')
+
+    const onChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setRangeValue(e.currentTarget.value)
+    }, [])
+
+    const [doubleValue, setDoubleValue] = useState<string | ReadonlyArray<string> | number>('25')
+    const onChangeDoubleSliderHandler = (e: ChangeEvent<HTMLInputElement>) => {
+
+    }
+
+    // === 11 Task ===
     return (
         <div className={s.juniorPage}>
             {load.loading
@@ -182,6 +196,16 @@ function Junior() {
                     </div>
                     <div className={s.styleTitleTasks}>Home work №10</div>
                     <ButtonNya onClick={startLoadingClickHandler}>start loading</ButtonNya>
+                    <div className={s.styleTitleTasks}>Home work №11</div>
+                    <Range value={rangeValue}
+                           onChange={onChangeHandler}
+                           minValue={"0"}
+                           maxValue={"100"}
+                    />
+                    <DoubleSlider
+                        onChange={onChangeDoubleSliderHandler}
+                    />
+
                 </>}
         </div>
     );

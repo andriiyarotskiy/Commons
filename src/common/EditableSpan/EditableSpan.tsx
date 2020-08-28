@@ -6,7 +6,7 @@ type EditableSpanType = {
     changeValueInput: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const EditableSpan = (props: EditableSpanType) => {
+const EditableSpan = React.memo((props: EditableSpanType) => {
 
     let [editMode, setEditMode] = useState(false)
 
@@ -28,5 +28,5 @@ const EditableSpan = (props: EditableSpanType) => {
             : <span onClick={onEditMode}
             >{props.value}</span>
     )
-}
+})
 export default EditableSpan
