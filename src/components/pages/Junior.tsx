@@ -135,9 +135,9 @@ function Junior() {
         setRangeValue(e.currentTarget.value)
     }, [])
 
-    const [doubleValue, setDoubleValue] = useState<string | ReadonlyArray<string> | number>('25')
-    const onChangeDoubleSliderHandler = (e: ChangeEvent<HTMLInputElement>) => {
-
+    const [doubleValue, setDoubleValue] = useState<number[]>([25, 75])
+    const onChangeDoubleSliderHandler = (event: React.ChangeEvent<{}>, newValue: number | number[]) => {
+        setDoubleValue(newValue as number[])
     }
 
     // === 11 Task ===

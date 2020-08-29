@@ -2,10 +2,10 @@ import React, {ChangeEvent} from "react";
 import style from "../../Range/Range.module.css"
 
 type RangeType = {
-    minValue?: string
-    maxValue?: string
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
-    value?: string
+    minValue?: number
+    maxValue?: number
+    onChange?: (event: React.ChangeEvent<{}>, newValue: number | number[]) => void
+    value?: number | number[]
 }
 
 const DoubleSlider: React.FC<RangeType> = React.memo(({minValue, maxValue, onChange, value}) => {
