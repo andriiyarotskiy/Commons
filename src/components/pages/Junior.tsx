@@ -139,7 +139,6 @@ function Junior() {
     const onChangeDoubleSliderHandler = (event: React.ChangeEvent<{}>, newValue: number | number[]) => {
         setDoubleValue(newValue as number[])
     }
-
     // === 11 Task ===
     return (
         <div className={s.juniorPage}>
@@ -204,8 +203,10 @@ function Junior() {
                     />
                     <DoubleSlider
                         onChange={onChangeDoubleSliderHandler}
+                        value={doubleValue}
+                        minValue={0}
+                        maxValue={100}
                     />
-
                 </>}
         </div>
     );

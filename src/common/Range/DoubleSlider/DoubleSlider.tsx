@@ -1,5 +1,7 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 import style from "../../Range/Range.module.css"
+import {Slider} from "@material-ui/core";
+
 
 type RangeType = {
     minValue?: number
@@ -13,13 +15,15 @@ const DoubleSlider: React.FC<RangeType> = React.memo(({minValue, maxValue, onCha
     return (
         <>
             <div className={style.range}>
-                <input type="range"
-                       min={minValue}
-                       max={maxValue}
-                       onChange={onChange}
-                       step={"10"}
+                <Slider
+                    color="primary"
+                    value={value}
+                    onChange={onChange}
+                    valueLabelDisplay="auto"
+                    aria-labelledby="range-slider"
+                    min={minValue}
+                    max={maxValue}
                 />
-                <label><b>{value}</b></label>
             </div>
         </>
     )
