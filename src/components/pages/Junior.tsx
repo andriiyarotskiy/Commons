@@ -43,13 +43,6 @@ function Junior() {
         fontWeight: "bold",
         marginBottom: "20px"
     }
-    // const styleTitleTasks: React.CSSProperties = {
-    //     fontSize: "20px",
-    //     textAlign: "center",
-    //     fontWeight: "bold",
-    //     padding: "30px"
-    // }
-
     // === 6 Task hook ===
     const [value, setValue] = useState('Enter value for save')
     // === 7 Task hook===
@@ -79,7 +72,7 @@ function Junior() {
             }
         })
         setRadio(newRadioArray)
-    }, [])
+    }, [radio])
 
 
     // === 8 Task ===
@@ -128,7 +121,7 @@ function Junior() {
         setTimeout(dispatch, 3000, setLoadingAC(false))
     }
     // === 10 Task ===
-    // === 11 Task ===
+    // === 11 Task ===♦
     const [rangeValue, setRangeValue] = useState('90')
 
     const onChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {

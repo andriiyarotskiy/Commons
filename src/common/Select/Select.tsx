@@ -21,7 +21,7 @@ const Select = React.memo((props: SelectType) => {
 
     const changeSelect = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
         props.setSelected(e.currentTarget.value)
-    }, [props.setSelected])
+    }, [props])
 
     return (
         <>
