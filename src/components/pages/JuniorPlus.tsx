@@ -14,16 +14,16 @@ export const backgroundColor = theme("theme", {
 });
 
 export const textColor = theme("theme", {
-    jet: "#C32F27",
+    jet: "#fff",
     ming: "#EED7C5",
     indigo: "#EEE2DF"
 });
 
-const ContainerStyled = styled.div`
+export const ContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   justify-content: flex-start;
   font-family: sans-serif;
@@ -60,18 +60,16 @@ const JuniorPlus = () => {
 
 
     return (
-        <ThemeProvider theme={{theme: selectSwitch}}>
-            <ContainerStyled>
-                <h1>JuniorPlus</h1>
-                <InputLabel id="demo-controlled-open-select-label">Theme switcher</InputLabel>
-                <ControlledOpenSelect
-                    optionArr={optionArr}
-                    value={selectSwitch}
-                    handleChange={handleChange}
-                    optionElement={optionElement}
-                />
-            </ContainerStyled>
-        </ThemeProvider>
+        <>
+            <h1>JuniorPlus</h1>
+            <InputLabel id="demo-controlled-open-select-label">Theme switcher</InputLabel>
+            <ControlledOpenSelect
+                optionArr={optionArr}
+                value={selectSwitch}
+                handleChange={handleChange}
+                optionElement={optionElement}
+            />
+        </>
     )
 }
 export default JuniorPlus
