@@ -2,7 +2,7 @@ import React, {ChangeEvent, useCallback, useState} from 'react';
 import EditableSpan from "../../common/EditableSpan/EditableSpan";
 import s from "./Junior.module.css"
 import ButtonNya from "../../common/ButtonNya/ButtonNya";
-import {saveState, restoreState} from "../../common/EditableSpan/FuncChangeSpan";
+import {restoreState, saveState} from "../../common/EditableSpan/FuncChangeSpan";
 import Select from "../../common/Select/Select";
 import {v1} from "uuid";
 import Radio from "../../common/Radio/Radio";

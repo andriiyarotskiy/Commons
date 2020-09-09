@@ -8,6 +8,7 @@ const Menu = () => {
     const [open, setOpen] = useState(true)
 
     function onClickHandler() {
+        document.body.classList.toggle('lockedMenu'); // toggle lockedMenu class
         setOpen(!open)
     }
 

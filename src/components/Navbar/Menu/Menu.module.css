@@ -4,7 +4,6 @@
     top: 20px;
     cursor: pointer;
     background: #111;
-    box-sizing: border-box;
     background-clip: content-box;
     width: 30px;
     height: 25px;
@@ -132,10 +131,7 @@
     padding-left: 80px;
     border: 1px solid rgba(255, 255, 255, 1);
 }
-/*Прокрутка содержимого вешать на body*/
-.locked {
-    overflow: hidden;
-}
+
 @keyframes fadeInRight {
     0% {
         opacity: 0;

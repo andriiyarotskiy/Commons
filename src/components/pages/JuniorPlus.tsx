@@ -4,8 +4,9 @@ import ControlledOpenSelect from "../../common/Select/SelectFromMaterialUI";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../state/store";
 import {switcherColorTheme} from "../../state/themeSwitcherReducer";
-import styled, {ThemeProvider} from "styled-components";
+import styled from "styled-components";
 import theme from 'styled-theming';
+import {Request} from "../Request/Request";
 
 export const backgroundColor = theme("theme", {
     jet: "#1A659E",
@@ -22,7 +23,6 @@ export const textColor = theme("theme", {
 export const ContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100vw;
   height: 100%;
   align-items: center;
   justify-content: flex-start;
@@ -32,6 +32,7 @@ export const ContainerStyled = styled.div`
   background-color: ${backgroundColor};
   color: ${textColor};
 `;
+
 
 const optionArr = [
     {title: 'JET', value: 'jet'},
@@ -51,8 +52,6 @@ const JuniorPlus = () => {
         } else if (e.currentTarget.value === 'indigo') {
             dispatch(switcherColorTheme('indigo'))
         }
-
-        // setSelectValue(event.currentTarget.value as string);
     };
     let optionElement = optionArr.map((el: any, i: number) => {
         return <option key={i} value={el.value}>{el.title}</option>
@@ -62,13 +61,18 @@ const JuniorPlus = () => {
     return (
         <>
             <h1>JuniorPlus</h1>
-            <InputLabel id="demo-controlled-open-select-label">Theme switcher</InputLabel>
-            <ControlledOpenSelect
-                optionArr={optionArr}
-                value={selectSwitch}
-                handleChange={handleChange}
-                optionElement={optionElement}
-            />
+            <div style={{display: "flex",flexDirection: "column", alignItems: "center"}}>
+                <InputLabel id="demo-controlled-open-select-label">Theme switcher</InputLabel>
+                <ControlledOpenSelect
+                    optionArr={optionArr}
+                    value={selectSwitch}
+                    handleChange={handleChange}
+                    optionElement={optionElement}
+                />
+            </div>
+
+            <Request/>
+
         </>
     )
 }
