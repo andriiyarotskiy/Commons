@@ -6,9 +6,7 @@ export type ButtonNyaPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButt
 
 const ButtonNya: React.FC<ButtonNyaPropsType> = React.memo(({...props}) => {
     return (
-        <div>
             <button className={s.btn}{...props}/>
-        </div>
     )
 })
 
