@@ -1,0 +1,16 @@
+.text__item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.time__item {
+    margin-left: auto;
+    padding-top: 5px;
+}
+
+.time__item span {
+    font-size: 15px;
+    opacity: 0.9;
+}

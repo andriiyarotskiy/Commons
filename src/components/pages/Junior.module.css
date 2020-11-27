@@ -1,0 +1,84 @@
+.juniorPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.styleTitleTasks {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+}
+.homeWorkNine__wrapper {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+}
+.homeWorkNine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.middleEditable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middleEditable input {
+    margin: 0 auto;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+    min-width: 300px;
+}
+
+.block .blockHidden {
+    position: absolute;
+    opacity: 0;
+    background-color: #4a90e2;
+    padding: 10px 10px;
+    color: white;
+    border-radius: 15px;
+}
+
+.block:hover .blockHidden {
+    opacity: 1;
+}
+
+.block .blockVisible {
+    font-weight: bold;
+    font-size: 25px;
+    opacity: 1;
+}
+
+.block .blockHidden {
+    transition: .5s;
+    transform: scale(0) rotateZ(180deg);
+}
+
+.block:hover .blockHidden {
+    transform: scale(1) rotateZ(0deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

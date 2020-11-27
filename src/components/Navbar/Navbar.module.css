@@ -1,0 +1,100 @@
+
+/*Navbar*/
+.header__container {
+    width: 250px;
+    height: 100%;
+    position: relative;
+}
+.header__body {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    transition: all 0.4s ease 0.3s;
+    z-index: 5;
+}
+.header__body.active {
+    top: 25px;
+    left: 150px;
+    z-index: 5;
+}
+.header__burger {
+    display: block;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+.header__burger span {
+    position: absolute;
+    background-color: black;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    top: 0.9rem;
+    transition: all 0.5s ease 0s;
+}
+
+.header__burger:before,.header__burger:after {
+    content: '';
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 0.25rem;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+.header__burger:before {
+    top: 0;
+}
+.header__burger:after {
+    bottom: 0;
+}
+.header__burger.active:before {
+    transform: rotate(45deg);
+    top: 0.9rem;
+    background-color: white;
+}
+.header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 0.9rem;
+    background-color: white;
+}
+.header__burger.active span {
+    transform: scale(0);
+    background-color: white;
+}
+
+
+.header__menu{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 100%;
+    background-color: #4a90e2;
+    transition: all 0.4s ease 0.3s;
+    padding-top: 75px;
+}
+.active {
+    left: 0;
+}
+.header__list{}
+.list {
+    list-style: none;
+    text-align: center;
+}
+.list a {
+    display: block;
+    height: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px 15px;
+}
+a.activeLink {
+    /*color: red;*/
+    background-color: black;
+}
