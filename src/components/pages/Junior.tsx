@@ -138,7 +138,7 @@ function Junior() {
             {load.loading
                 ? <div style={styleJunior}><PreLoader/></div>
                 : <>
-                    <p style={styleJunior}>Junior</p>
+                    <p style={styleJunior}>Page 2</p>
                     <div className={s.styleTitleTasks}>Home work №6</div>
                     <div className={s.middleEditable}>
                         <EditableSpan value={value} changeValueInput={changeValueInput}/>

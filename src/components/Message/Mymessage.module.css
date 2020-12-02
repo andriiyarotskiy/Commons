@@ -41,7 +41,7 @@
     right: 100%;
     width: 200px;
     height: 60px;
-    background: white; /*цвет нужен как цвет фона*/
+    background: #1A659E; /*цвет нужен как цвет фона*/
     border-radius: 100%;
     transform: translate(0px, 3px);
 }

@@ -17,9 +17,9 @@ const Menu = () => {
             <div className={open ? s.overlay : `${s.overlay} ${s.open}`}>
                 <nav className={s.overlayMenu}>
                     <ul className={s.menu}>
-                        <li><NavLink to="/prejunior" onClick={onClickHandler} role="menuitem">PreJunior</NavLink></li>
-                        <li><NavLink to="/junior" onClick={onClickHandler} role="menuitem">Junior</NavLink></li>
-                        <li><NavLink to="/juniorplus" onClick={onClickHandler} role="menuitem">Junior +</NavLink></li>
+                        <li><NavLink to="/page1" onClick={onClickHandler} role="menuitem">Page 1</NavLink></li>
+                        <li><NavLink to="/page2" onClick={onClickHandler} role="menuitem">Page 2</NavLink></li>
+                        <li><NavLink to="/page3" onClick={onClickHandler} role="menuitem">Page 3</NavLink></li>
                     </ul>
                 </nav>
             </div>

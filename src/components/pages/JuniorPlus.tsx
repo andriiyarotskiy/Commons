@@ -18,6 +18,8 @@ const optionArr = [
     {title: 'INDIGO', value: 'indigo'},
 ]
 
+const stylePage:  React.CSSProperties = {overflowX: "hidden", display: "flex", flexDirection: "column", alignItems: "center", height: "100vh"}
+
 const JuniorPlus = () => {
 
     const selectSwitch = useSelector<RootStateType>(state => state.themeSwitcher.color)
@@ -42,8 +44,8 @@ const JuniorPlus = () => {
 
     return (
         <>
-            <h1>JuniorPlus</h1>
-            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <h1>Page 3</h1>
+            <div style={stylePage}>
                 <div>
                     <InputLabel id="demo-controlled-open-select-label">Theme switcher</InputLabel>
                     <ControlledOpenSelect
@@ -56,7 +58,6 @@ const JuniorPlus = () => {
                 <div>
                     <Request/>
                 </div>
-                <div style={{borderTop: "2px solid black", width: "100vw"}}></div>
                 <Modal active={modalActive} setActive={setModalActive}>
                     <form>
                         <div style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
@@ -68,7 +69,7 @@ const JuniorPlus = () => {
                         </div>
                     </form>
                 </Modal>
-                <div>
+                <div style={{marginTop: "100px"}}>
                     <ButtonNya onClick={() => setModalActive(true)}>
                         Modal
                     </ButtonNya>
@@ -95,7 +96,7 @@ export const textColor = theme("theme", {
 export const ContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh; /*height: 100%;*/
   align-items: center;
   justify-content: flex-start;
   font-family: sans-serif;

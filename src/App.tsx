@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import {HashRouter, Route} from "react-router-dom";
-import PreJunior from "./components/pages/PreJunior";
-import Junior from "./components/pages/Junior";
-import JuniorPlus, {ContainerStyled} from "./components/pages/JuniorPlus";
+import FirstPage from "./components/pages/PreJunior";
+import SecondPage from "./components/pages/Junior";
+import ThirdPage, {ContainerStyled} from "./components/pages/JuniorPlus";
 import Menu from "./components/Navbar/Menu/Menu";
 import {ThemeProvider} from "styled-components";
 import {useSelector} from "react-redux";
@@ -17,9 +17,9 @@ function App() {
                 <ContainerStyled>
                     <div className={'app-wrapper'}>
                         <Menu/>
-                        <Route path="/prejunior" component={PreJunior}/>
-                        <Route path="/junior" component={Junior}/>
-                        <Route path="/juniorplus" component={JuniorPlus}/>
+                        <Route path="/page1" component={FirstPage}/>
+                        <Route path="/page2" component={SecondPage}/>
+                        <Route path="/page3" component={ThirdPage}/>
                     </div>
                 </ContainerStyled>
             </ThemeProvider>

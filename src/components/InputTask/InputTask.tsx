@@ -35,13 +35,13 @@ const InputTask = (props: InputTaskType) => {
 
     return (
         <div className={s.wrapperInputtask}>
-            <InputNya value={name}
-                      onChange={changeInputValue}
-                      onEnter={handleKeyPress}
-                      error={props.error}
-                      clearInputAfterPress={() => props.clearInputAfterPress(name)}
-            />
-            <ButtonNya onClick={handleClickPress}>BTN</ButtonNya>
+            <div><InputNya value={name}
+                           onChange={changeInputValue}
+                           onEnter={handleKeyPress}
+                           error={props.error}
+                           clearInputAfterPress={() => props.clearInputAfterPress(name)}
+            /></div>
+            <div><ButtonNya onClick={handleClickPress}>BTN</ButtonNya></div>
             <span>{props.arr.length}</span>
         </div>
     )
