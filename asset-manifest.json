@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/common_components/static/css/main.8f01b439.chunk.css",
-    "main.js": "/common_components/static/js/main.5ee334bc.chunk.js",
-    "main.js.map": "/common_components/static/js/main.5ee334bc.chunk.js.map",
-    "runtime-main.js": "/common_components/static/js/runtime-main.ef40f9fa.js",
-    "runtime-main.js.map": "/common_components/static/js/runtime-main.ef40f9fa.js.map",
-    "static/js/2.ccc7b8cc.chunk.js": "/common_components/static/js/2.ccc7b8cc.chunk.js",
-    "static/js/2.ccc7b8cc.chunk.js.map": "/common_components/static/js/2.ccc7b8cc.chunk.js.map",
-    "index.html": "/common_components/index.html",
-    "precache-manifest.65a319a70ae91a18f3104ad6d56d8e07.js": "/common_components/precache-manifest.65a319a70ae91a18f3104ad6d56d8e07.js",
-    "service-worker.js": "/common_components/service-worker.js",
-    "static/css/main.8f01b439.chunk.css.map": "/common_components/static/css/main.8f01b439.chunk.css.map",
-    "static/js/2.ccc7b8cc.chunk.js.LICENSE.txt": "/common_components/static/js/2.ccc7b8cc.chunk.js.LICENSE.txt",
-    "static/media/preloader3.svg": "/common_components/static/media/preloader3.79abdcc5.svg"
+    "main.css": "/Commons/static/css/main.8f01b439.chunk.css",
+    "main.js": "/Commons/static/js/main.0d239171.chunk.js",
+    "main.js.map": "/Commons/static/js/main.0d239171.chunk.js.map",
+    "runtime-main.js": "/Commons/static/js/runtime-main.6493813e.js",
+    "runtime-main.js.map": "/Commons/static/js/runtime-main.6493813e.js.map",
+    "static/js/2.b8d3bb35.chunk.js": "/Commons/static/js/2.b8d3bb35.chunk.js",
+    "static/js/2.b8d3bb35.chunk.js.map": "/Commons/static/js/2.b8d3bb35.chunk.js.map",
+    "index.html": "/Commons/index.html",
+    "precache-manifest.64780c4e681a77ff56ce93c2967b7f67.js": "/Commons/precache-manifest.64780c4e681a77ff56ce93c2967b7f67.js",
+    "service-worker.js": "/Commons/service-worker.js",
+    "static/css/main.8f01b439.chunk.css.map": "/Commons/static/css/main.8f01b439.chunk.css.map",
+    "static/js/2.b8d3bb35.chunk.js.LICENSE.txt": "/Commons/static/js/2.b8d3bb35.chunk.js.LICENSE.txt",
+    "static/media/preloader3.svg": "/Commons/static/media/preloader3.79abdcc5.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ef40f9fa.js",
-    "static/js/2.ccc7b8cc.chunk.js",
+    "static/js/runtime-main.6493813e.js",
+    "static/js/2.b8d3bb35.chunk.js",
     "static/css/main.8f01b439.chunk.css",
-    "static/js/main.5ee334bc.chunk.js"
+    "static/js/main.0d239171.chunk.js"
   ]
 }
