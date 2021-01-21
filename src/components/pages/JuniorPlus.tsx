@@ -10,6 +10,7 @@ import {Request} from "../Request/Request";
 import Modal from '../../common/Modal/Modal';
 import ButtonNya from "../../common/ButtonNya/ButtonNya";
 import InputNya from "../../common/InputNya/InputNya";
+import Navbar from "../Navbar/Navbar";
 
 
 const optionArr = [
@@ -74,6 +75,7 @@ const JuniorPlus = () => {
                         Modal
                     </ButtonNya>
                 </div>
+                <Navbar />
             </div>
         </>
     )
